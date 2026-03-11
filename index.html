@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asociația Misionară Creștină Betleem</title>
+<meta name="description" content="Asociația Misionară Creștină Betleem Lipova – sprijin pentru copii aflați în dificultate și proiecte sociale creștine.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;background:#f5f7fb;color:#222}
+
+header{background:#0f2f53;color:white;padding:16px 30px;position:sticky;top:0;z-index:100}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+
+.logo{font-size:22px;font-weight:600;display:flex;align-items:center;gap:10px}
+.logo span{color:#ffd24c}
+
+nav a{color:white;text-decoration:none;margin:10px;font-weight:500}
+
+.hero{
+height:80vh;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('hero.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{font-size:48px;margin-bottom:10px}
+.hero p{font-size:18px;max-width:700px;margin:auto}
+
+.cta{
+margin-top:25px;
+}
+
+.btn{
+background:#ffd24c;
+color:#000;
+padding:14px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+margin:6px;
+display:inline-block
+}
+
+section{max-width:1200px;margin:auto;padding:70px 20px}
+
+h2{color:#0f2f53;margin-bottom:20px}
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 8px 25px rgba(0,0,0,.08)
+}
+
+/* impact stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px}
+.stat{background:#0f2f53;color:white;padding:35px;border-radius:10px;text-align:center}
+.stat-number{font-size:42px;font-weight:600}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.project{background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.project img{width:100%;height:180px;object-fit:cover}
+.project-content{padding:20px}
+.project h3{margin-top:0;color:#0f2f53}
+
+/* gallery slideshow */
+.slideshow{position:relative;max-width:100%;overflow:hidden;border-radius:10px}
+.slide{display:none}
+.slide img{width:100%;height:420px;object-fit:cover}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.news-item{background:white;padding:20px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+
+/* volunteer */
+form input,form textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:14px;
+border-radius:6px;
+border:1px solid #ccc
+}
+
+button{
+background:#0f2f53;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer
+}
+
+/* donate */
+.donate{background:#0f2f53;color:white;text-align:center}
+
+footer{
+background:#0f2f53;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px
+}
+
+.map{width:100%;height:350px;border:none;border-radius:10px}
+
+@media(max-width:700px){
+.hero h1{font-size:32px}
+}
+</style>
+
+<script>
+
+/* slideshow */
+let slideIndex=0;
+function showSlides(){
+let slides=document.querySelectorAll('.slide');
+slides.forEach(s=>s.style.display='none');
+slideIndex++;
+if(slideIndex>slides.length){slideIndex=1}
+slides[slideIndex-1].style.display='block';
+setTimeout(showSlides,4000);
+}
+
+/* animated stats */
+function animateStats(){
+const nums=document.querySelectorAll('.stat-number');
+nums.forEach(num=>{
+const target=+num.dataset.target;
+let count=0;
+const step=target/100;
+const update=()=>{
+count+=step;
+if(count<target){
+num.innerText=Math.floor(count);
+requestAnimationFrame(update);
+}else{
+num.innerText=target;
+}
+}
+update();
+})
+}
+
+window.onload=()=>{
+showSlides();
+animateStats();
+}
+
+</script>
+
+</head>
+<body>
+
+<header>
+<div class="topbar">
+<div class="logo">✝ Betleem <span>Mission</span></div>
+<nav>
+<a href="#about">Despre</a>
+<a href="#impact">Impact</a>
+<a href="#projects">Proiecte</a>
+<a href="#gallery">Galerie</a>
+<a href="#news">Activități</a>
+<a href="#volunteer">Voluntariat</a>
+<a href="#donate">Donează</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div>
+<h1>Asociația Misionară Creștină Betleem</h1>
+<p>Ajutăm copiii aflați în dificultate și dezvoltăm proiecte sociale pentru comunitate.</p>
+
+<div class="cta">
+<a class="btn" href="#donate">Donează</a>
+<a class="btn" href="#volunteer">Devino voluntar</a>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="card">
+<h2>Despre noi</h2>
+<p>Asociația Misionară Creștină Betleem a fost înființată în anul 1992 și desfășoară activități sociale dedicate copiilor aflați în dificultate. În cadrul asociației funcționează casa de tip familial „Acoperișul Speranței”.</p>
+</div>
+</section>
+
+<section id="impact">
+<h2>Impact</h2>
+<div class="stats">
+<div class="stat">
+<div class="stat-number" data-target="71">0</div>
+Copii ajutați
+</div>
+<div class="stat">
+<div class="stat-number" data-target="12">0</div>
+Beneficiari actuali
+</div>
+<div class="stat">
+<div class="stat-number" data-target="30">0</div>
+Voluntari
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Proiecte sociale</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="project1.jpg">
+<div class="project-content">
+<h3>Acoperișul Speranței</h3>
+<p>Casă de tip familial pentru copii separați de părinți.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="project2.jpg">
+<div class="project-content">
+<h3>Sprijin pentru tineri</h3>
+<p>Proiect pentru tinerii care părăsesc sistemul de protecție.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="project3.jpg">
+<div class="project-content">
+<h3>Îngrijire vârstnici</h3>
+<p>Planuri pentru servicii sociale dedicate persoanelor în vârstă.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+<h2>Galerie foto</h2>
+
+<div class="slideshow">
+<div class="slide"><img src="foto1.jpg"></div>
+<div class="slide"><img src="foto2.jpg"></div>
+<div class="slide"><img src="foto3.jpg"></div>
+</div>
+
+</section>
+
+<section id="news">
+<h2>Activități</h2>
+
+<div class="news">
+
+<div class="news-item">
+<h3>Activități educaționale</h3>
+<p>Copiii participă la activități educaționale și recreative.</p>
+</div>
+
+<div class="news-item">
+<h3>Evenimente comunitare</h3>
+<p>Organizăm activități și evenimente pentru comunitate.</p>
+</div>
+
+<div class="news-item">
+<h3>Voluntariat</h3>
+<p>Voluntarii contribuie la dezvoltarea proiectelor sociale.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="volunteer">
+<div class="card">
+<h2>Devino voluntar</h2>
+<form>
+<input placeholder="Nume" required>
+<input placeholder="Email" required>
+<textarea placeholder="Mesaj"></textarea>
+<button>Trimite</button>
+</form>
+</div>
+</section>
+
+<section id="donate">
+<div class="card donate">
+<h2>Susține lucrarea</h2>
+<p><strong>IBAN:</strong> RO04BTRL00201205172740XX</p>
+<p>Sprijinul tău ajută copiii să aibă un viitor mai bun.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<p>Str. Lugojului nr. 31, Lipova, jud. Arad</p>
+<p>Telefon: 0357 738 121 / 0753 397 011</p>
+<p>Email: amcbetleem@yahoo.ro</p>
+
+<iframe class="map" src="https://maps.google.com/maps?q=Lipova%20Arad%20Lugojului%2031&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</section>
+
+<footer>
+<p>© 2026 Asociația Misionară Creștină Betleem</p>
+</footer>
+
+</body>
+</html>
